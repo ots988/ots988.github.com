@@ -1,51 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af23b353-be60-4e62-9692-624f9f87bfd1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change beforePath="$PROJECT_DIR$/_includes/header.html" afterPath="$PROJECT_DIR$/_includes/header.html" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-09-29-开篇.md" afterPath="$PROJECT_DIR$/_posts/2018-09-29-开篇.md" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/09/29/开篇.html" afterPath="$PROJECT_DIR$/_site/2018/09/29/开篇.html" />
-      <change beforePath="$PROJECT_DIR$/_site/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/about.html" afterPath="$PROJECT_DIR$/_site/about.html" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/scan/qq.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/scan/wechat.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-17-welcome.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-18-Ngrok������͸.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-22-SSR�Ĵ.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-25-���AlphaRacks.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-12-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-13-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-14-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-15-���ڿ���.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-18-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-05-ǰ���Զ��������ܽ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-06-AWS.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-13-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-14-�����޸�������ܽ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-17-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-18-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-21-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-04-11-�ռ���ɫСdemo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-05-30-HardCandy-Jekyll.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-10-a-story.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-10-΢��С�����ܽ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-18-thinking-in-the-morning.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-23-LongMao.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-08-22-Wanted.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-09-27-΢��С�����ܽ�.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-09-30-��ƪ - ����.markdowndad" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/friendLink.html" afterPath="$PROJECT_DIR$/_site/friendLink.html" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/tags.html" afterPath="$PROJECT_DIR$/_site/tags.html" />
-      <change beforePath="$PROJECT_DIR$/_site/timeline.html" afterPath="$PROJECT_DIR$/_site/timeline.html" />
-      <change beforePath="$PROJECT_DIR$/assets/profile.jpeg" afterPath="$PROJECT_DIR$/assets/profile.jpeg" />
-      <change beforePath="$PROJECT_DIR$/assets/scan/qq.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/scan/wechat.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/friendLink.html" afterPath="$PROJECT_DIR$/friendLink.html" />
-    </list>
+    <list default="true" id="af23b353-be60-4e62-9692-624f9f87bfd1" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="436">
-              <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+              <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -107,7 +63,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="297" />
     <option name="y" value="80" />
     <option name="width" value="816" />
@@ -260,15 +216,15 @@
       <option name="presentableId" value="Default" />
       <updated>1538289217956</updated>
       <workItem from="1538289237468" duration="240000" />
-      <workItem from="1538291991931" duration="1235000" />
+      <workItem from="1538291991931" duration="1244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1475000" />
+    <option name="totallyTimeSpent" value="1484000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -318,7 +274,7 @@
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
-          <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="2" selection-end-line="71" selection-end-column="7" />
           <folding />
         </state>
       </provider>
