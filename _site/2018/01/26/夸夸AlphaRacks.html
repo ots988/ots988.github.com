@@ -1,0 +1,338 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Just for fun !" />
+<meta name="keywords" content="徐金琦, 徐金琦的独立博客, 徐金琦的博客, 前端,  前端博客, javascript, 操作系统, ubuntu, 网络" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_tango.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>夸夸AlphaRacks公司</title>
+<!-- 百度统计 -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?efa555a0adb0eca621754fde118fb358";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 谷歌分析 -->
+
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" rgb(98,170,255) ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:rgb(98,170,255);">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">xSeven</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">首页</a></li>
+              
+                <li><a href="/tags.html" style="color: white;">标签</a></li>
+              
+                <li><a href="/timeline.html" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about.html" style="color: white;">关于博主</a></li>
+              
+                <li><a href="/resume/index.html" style="color: white;">个人简历</a></li>
+              
+                <li><a href="/friendLink.html" style="color: white;">友情链接</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>首页</li></a>
+        
+          <a href="/tags.html"><li>标签</li></a>
+        
+          <a href="/timeline.html"><li>时间线</li></a>
+        
+          <a href="/about.html"><li>关于博主</li></a>
+        
+          <a href="/resume/index.html"><li>个人简历</li></a>
+        
+          <a href="/friendLink.html"><li>友情链接</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">夸夸AlphaRacks公司</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:rgb(98,170,255);">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="/2018/02/13/ubuntu-%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%E7%9A%84%E6%97%A5%E5%B8%B8.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(98,170,255)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(98,170,255);"><sapn class="main">[Ubuntu]之安装双系统</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">夸夸AlphaRacks公司</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2018/01/23/SSR%E7%9A%84%E6%90%AD%E5%BB%BA.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(98,170,255)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(98,170,255);"><sapn class="main">SSR的搭建</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="/2018/02/13/ubuntu-%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%E7%9A%84%E6%97%A5%E5%B8%B8.html" class="leftchange" style="border-right: 1px solid rgb(98,170,255);border-bottom: 2px solid rgb(98,170,255);"><span>上一篇<br><br>[Ubuntu]之安装双系统</span></a>
+    
+    
+      <a href="/2018/01/23/SSR%E7%9A%84%E6%90%AD%E5%BB%BA.html" class="rightchange" style="border-left: 1px solid rgb(98,170,255);border-bottom: 2px solid rgb(98,170,255);"><span>下一篇<br><br>SSR的搭建</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+
+  <!-- 文章内容 -->
+  <h3 id="写篇小日记">写篇小日记</h3>
+
+<p>​	感冒了几天，没有来写博客，就天天在家里看看剧。也没有注意到自己的VPS的情况。今天想用用SSR发现，居然不能用了。居然见鬼了。！！！</p>
+
+<p>​	然后想起来前几天看到说这几天好像在开什么会，墙应该又高了，我的ip肯定被注意到了，是应该注意点啊。</p>
+
+<p>​	为了验证一下自己的想法，进了一个ip分析的网站，在这里分享给大家—— <a href="https://www.ipip.net">IPIP</a>。</p>
+
+<p>​	用了ping工具发现原来的ip居然在国内任何一个地方的丢包率全为100%。尴尬又无奈。</p>
+
+<p>​	我只好抱着试一试的心态在此建了个服务单，给老美发邮件。“Excuse me!  Can you change a IP for me? This IP is not accessible in China.” 这次他完全就是秒回我。而且和我说给我换了个ip。外加一句经典的话，“Please check now.” 他又让我check一下。那就check，用他新IP在Xshell里连了一下，完全OJB有用。这效率还真是可以啊。想起国内的云，发封邮件要好久才会回，这远在大洋彼岸的美帝，回我这么迅速，算是很良心了。</p>
+
+<p>​	希望这次别再被“河蟹”了，还有上次说的BBR，我在这次没有实现，而且网速更慢了，还是等下次的谷歌云或者是亚马逊云在详细的写吧。先贴一点OpenVZ下用BBR会用到的命令。</p>
+
+<hr />
+
+<p><strong>Google BBR安装脚本</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://raw.githubusercontent.com/kuoruan/shell-scripts/master/ovz-bbr/ovz-bbr-installer.sh
+
+<span class="nb">chmod</span> +x ovz-bbr-installer.sh
+
+./ovz-bbr-installer.sh
+
+</code></pre></div></div>
+
+<p>1、安装过程中会要求输入需要加速的端口号，请按自己的需求输入（比如加速Web服务，则输入80）</p>
+
+<p>2、可能需要配置 “公网接口名称”，即你服务器上具有公网 IP 的接口名称。搬瓦工 OpenVZ 上默认都是 venet0</p>
+
+<p>这个名称可以通过ifconfig命令查询得到，如果执行ifconfig命令提示无此命令，请先安装net-tools工具包。</p>
+
+<p><strong>net-tools工具包：</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>net-tools <span class="nt">-y</span>
+</code></pre></div></div>
+
+<p><strong>判断BBR是否正常工作</strong></p>
+
+<p>判断 bbr 是否正常启动可以尝试 ping 10.0.0.2，如果能通，说明 bbr 已经启动。</p>
+
+<p><strong>启动、停止、重启bbr、查看bbr服务状态</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="o">{</span>start|stop|restart|status<span class="o">}</span> haproxy-lkl
+</code></pre></div></div>
+
+<p><strong>配置bbr加速端口</strong></p>
+
+<p>（在安装的时候只输入了一个端口，但是实际可以支持加速多个端口），如需修改加速端口，请修改以下文件，每行一个端口号，或者端口范围</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /usr/local/haproxy-lkl/etc/port-rules
+</code></pre></div></div>
+
+<p><strong>卸载bbr</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./ovz-bbr-installer.sh uninstall
+</code></pre></div></div>
+
+<hr />
+
+<p>好了，感冒还没彻底好，我要回到温暖的被窝了。。。。</p>
+
+<p>​	如果看到这篇文章还有什么疑问想要寻求帮助的，欢迎联系本人。微博、qq、微信在文章末尾处。欢迎来告诉我你的想法。</p>
+
+<p>​	如需转载，请注明出处，谢谢。</p>
+
+  <!-- 引入share模块 -->
+  
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'twitter'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+    <section class="post-footer-item comment">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI2OS8xMDgwNg=="></div>
+    </section>
+
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    <!-- City版安装代码已完成 -->
+
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有| livere |评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>徐金琦的博客 ©
+  
+  
+  2018
+  <br>
+  Powered by <a href="https://www.jekyll.com.cn/">Jekyll</a> | <a href="https://github.com/xukimseven/HardCandy-Jekyll">HardCandy-Jekyll</a></span>
+</footer>
+
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
