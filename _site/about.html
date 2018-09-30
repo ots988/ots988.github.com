@@ -59,7 +59,7 @@ var _hmt = _hmt || [];
               
                 <li><a href="/timeline.html">时间线</a></li>
               
-                <li><a href="/about1.html">关于博主</a></li>
+                <li><a href="/about.html">关于博主</a></li>
               
                 <li><a href="/friendLink.html">前端作品</a></li>
               
@@ -72,6 +72,7 @@ var _hmt = _hmt || [];
   </div>
 
 </header>
+
 <script>
 (function() {
     var OriginTitile = document.title, titleTime;
@@ -88,7 +89,6 @@ var _hmt = _hmt || [];
     });
 })();
 </script>
-
 <div id="boot-area">
     <ul>
         
@@ -98,7 +98,7 @@ var _hmt = _hmt || [];
         
           <a href="/timeline.html"><li>时间线</li></a>
         
-          <a href="/about1.html"><li>关于博主</li></a>
+          <a href="/about.html"><li>关于博主</li></a>
         
           <a href="/friendLink.html"><li>前端作品</li></a>
         
@@ -119,7 +119,7 @@ var _hmt = _hmt || [];
           <span id="yourname">宋一峰</span>
           <span id="yourbio">软件工程师</span>
           
-            <span id="aboutyou">&emsp;&emsp;本人就读于 [ <a href="http://www.zjwu.net/">浙江万里学院</a> ]，是个计算机专业的大三小学生（2018年）。爱好有多多，看篮球足球、 打篮球、看动漫、看综艺以及写前端、设计前端。关于我的项目可以点击下方的 github 图标进入我的主页查看，也可以 在博客顶部的个人简历中看到我的项目。项目虽小，但也是我的心血啊，哈哈。当前我使用的博客主题也是我自己写的项目， 基于 ruby 和 jekyll ，用 html + css + js 从零写的小项目。当然，要十分感谢一些开源项目，比如 <a href="https://daneden.github.io/animate.css/">css动画库</a> 、<a href="http://www.bootcdn.cn/social-share.js/"> Bootstrap 中文网开源项目免费 项目 social-share.js</a>  、<a href="http://www.iconfont.cn/">阿里云图标库</a> 、<a href="https://fonts.google.com">谷歌字体库</a> ,以及第三方 评论系统 [<a href="https://disqus.com/profile/login/">dispus</a>]、[<a href="https://livere.com/">来必力livere</a>]、[ <a href="https://github.com/settings/applications/new">Gitment</a>]，还有 <a href="https://tongji.baidu.com/web/welcome/login?castk=LTE%3D">百度统计</a>和 <a href="https://www.google.com/intl/zh-CN/analytics/">谷歌分析</a> 等等。。。<br> &emsp;&emsp;当然还要感谢， H2O 主题开发者 <a href="https://github.com/kaeyleo">悟空 kaeyleo</a>。<a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a> 是我原先用的博客主题，在使用他与修改他的过程中让我接触与熟悉了 jekyll 这个前端小工具，也促使我写了我自己的主题。当然我也一样，将这个主题开源到github 上，供大家使用。如果喜欢我的博客主题，欢迎star和下载使用。下载后修改 _config.yml 即可使用，开封即食。具体看使用文档。 </span>
+            <span id="aboutyou">&emsp;&emsp;来不及介绍，下次补之。 </span>
           
         
         
@@ -183,10 +183,47 @@ var _hmt = _hmt || [];
           
           <a href="tags.html#TeXt" class="tag">TeXt</a>
           
+          <a href="tags.html#健身" class="tag">健身</a>
+          
+          <a href="tags.html#坚毅" class="tag">坚毅</a>
+          
+          <a href="tags.html#感想" class="tag">感想</a>
+          
       
       </li>
     </ul>
 </main>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>dsds</title>
+	  </head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+        <div id ='gitalk-container'><div>
+  
+  <script >
+  var gitalk = new Gitalk({
+	  clientID: 'b8edb13e8f69a9061bd4',
+	  clientSecret: 'a1dc62631b370ac789433962dec9ad0566f4d5db',
+	  repo: 'ots988.github.com',
+	  owner: 'ots988',
+	  admin: ['ots988'],
+	  id: window.location.pathname,      // Ensure uniqueness and length less than 50
+      //  labels: ['gitment'],
+      //  perPage: 50,
+	  distractionFreeMode: true  // Facebook-like distraction free mode
+	})
+	gitalk.render('gitalk-container');
+  </script>
+
+</html>
+
+<!-- Gitalk end -->
+</body>
+</html>
 <footer id="bottom">
   <br>
   <span>宋一峰的博客 ©

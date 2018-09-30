@@ -59,7 +59,7 @@ var _hmt = _hmt || [];
               
                 <li><a href="/timeline.html">时间线</a></li>
               
-                <li><a href="/about1.html">关于博主</a></li>
+                <li><a href="/about.html">关于博主</a></li>
               
                 <li><a href="/friendLink.html">前端作品</a></li>
               
@@ -72,6 +72,7 @@ var _hmt = _hmt || [];
   </div>
 
 </header>
+
 <script>
 (function() {
     var OriginTitile = document.title, titleTime;
@@ -88,7 +89,6 @@ var _hmt = _hmt || [];
     });
 })();
 </script>
-
 <div id="boot-area">
     <ul>
         
@@ -98,7 +98,7 @@ var _hmt = _hmt || [];
         
           <a href="/timeline.html"><li>时间线</li></a>
         
-          <a href="/about1.html"><li>关于博主</li></a>
+          <a href="/about.html"><li>关于博主</li></a>
         
           <a href="/friendLink.html"><li>前端作品</li></a>
         
@@ -121,6 +121,12 @@ var _hmt = _hmt || [];
             <a href="#jekyll" class="tag">jekyll</a>
             
             <a href="#TeXt" class="tag">TeXt</a>
+            
+            <a href="#健身" class="tag">健身</a>
+            
+            <a href="#坚毅" class="tag">坚毅</a>
+            
+            <a href="#感想" class="tag">感想</a>
             
         
         </li>
@@ -149,8 +155,63 @@ var _hmt = _hmt || [];
         </li>
 
         
+        <li>
+            <span class="tag-name" id="健身">「健身」</span>
+            
+            <a class="tag-post" href="/2018/09/29/%E5%81%A5%E8%BA%AB%E5%BF%83%E5%BE%97.html" title="运动心法">运动心法</a>
+            
+        </li>
+
+        
+        <li>
+            <span class="tag-name" id="坚毅">「坚毅」</span>
+            
+            <a class="tag-post" href="/2018/09/29/%E5%81%A5%E8%BA%AB%E5%BF%83%E5%BE%97.html" title="运动心法">运动心法</a>
+            
+        </li>
+
+        
+        <li>
+            <span class="tag-name" id="感想">「感想」</span>
+            
+            <a class="tag-post" href="/2018/09/29/%E5%81%A5%E8%BA%AB%E5%BF%83%E5%BE%97.html" title="运动心法">运动心法</a>
+            
+        </li>
+
+        
     </ul>
 </main>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>dsds</title>
+	  </head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+        <div id ='gitalk-container'><div>
+  
+  <script >
+  var gitalk = new Gitalk({
+	  clientID: 'b8edb13e8f69a9061bd4',
+	  clientSecret: 'a1dc62631b370ac789433962dec9ad0566f4d5db',
+	  repo: 'ots988.github.com',
+	  owner: 'ots988',
+	  admin: ['ots988'],
+	  id: window.location.pathname,      // Ensure uniqueness and length less than 50
+      //  labels: ['gitment'],
+      //  perPage: 50,
+	  distractionFreeMode: true  // Facebook-like distraction free mode
+	})
+	gitalk.render('gitalk-container');
+  </script>
+
+</html>
+
+<!-- Gitalk end -->
+</body>
+</html>
 <footer id="bottom">
   <br>
   <span>宋一峰的博客 ©
