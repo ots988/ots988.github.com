@@ -26,7 +26,7 @@
 <link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
-<title>微信小程序</title>
+<title>开篇</title>
 <!-- 百度统计 -->
 
 <script>
@@ -43,7 +43,7 @@ var _hmt = _hmt || [];
 
 
 <!-- Android Lolipop Theme Color -->
-<meta name="theme-color" content=" #263238 ">
+<meta name="theme-color" content=" rgb(255,90,90) ">
 </head>
 <body>
 
@@ -51,7 +51,7 @@ var _hmt = _hmt || [];
 <a id="htmlup" name="htmlup"></a>
 <!-- 引入博文顶部选项 -->
 
-<header id="post-header" style="background-color:#263238;">
+<header id="post-header" style="background-color:rgb(255,90,90);">
   <div class="top-center">
       <div class="logo">
           <a href="/" title="my awesome webtitle" style="color: white;">Arthur</a>
@@ -96,7 +96,7 @@ var _hmt = _hmt || [];
 <!-- 引入博文顶部样式 -->
 <!-- 版本一 垃圾 -->
 <!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
-    <span class="wow fadeInUp" data-wow-delay="0.2s">微信小程序</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">开篇</span>
     <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
     <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
     <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
@@ -104,34 +104,34 @@ var _hmt = _hmt || [];
 
 <!-- 版本二 可切换页面 -->
 
-<div class="post-top" style="background-color:#263238;">
+<div class="post-top" style="background-color:rgb(255,90,90);">
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#263238';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
-      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#263238;"><sapn class="main">没有上一页咯</sapn></span></div>
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(255,90,90)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(255,90,90);"><sapn class="main">没有上一页咯</sapn></span></div>
     
   </div>
   <div class="post-titlearea">
-    <span class="wow fadeInUp" data-wow-delay="0.2s">微信小程序</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">开篇</span>
     <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
     <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
     <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
   </div>
   <div class="right-area">
     
-      <a href="javascript:;" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#263238';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
-      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#263238;"><sapn class="main">没有下一页咯</sapn></span></div>
+      <a href="javascript:;" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(255,90,90)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(255,90,90);"><sapn class="main">没有下一页咯</sapn></span></div>
     
   </div>
 
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="javascript:;" class="leftchange" style="border-right: 1px solid #263238;border-bottom: 2px solid #263238;"><span><br>没有上一篇咯</span></a>
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(255,90,90);border-bottom: 2px solid rgb(255,90,90);"><span><br>没有上一篇咯</span></a>
     
     
-      <a href="javascript:;" class="rightchange" style="border-left: 1px solid #263238;border-bottom: 2px solid #263238;"><span><br>没有下一篇咯</span></a>
+      <a href="javascript:;" class="rightchange" style="border-left: 1px solid rgb(255,90,90);border-bottom: 2px solid rgb(255,90,90);"><span><br>没有下一篇咯</span></a>
     
   </div>
 </div>
@@ -142,182 +142,46 @@ var _hmt = _hmt || [];
   
 
   <!-- 文章内容 -->
-  # 这是在学习小程序的过程中的日常总结(大概会常更新)
-  
-<br />
->  _导航栏_
+  # 2018-09-30 开篇
 
-[TOC]
+> 给公司搭文档服务器，使用nginx反向代理jekyll，整合了许多功能，加之对前端的兴趣，决定开设个人博客，此篇定位要展示的内容，从选择说起。    
 
-<br />
+## jekyll VS Heox
+    在网上搜对比，基本都是说jekyll难用的，其使用的ruby使得入门难度大增，bug非常多；liquid也一样没有js好用，学习成本大。不过事实是jekyll就在近日发布了3.8.4版本，其社区活跃，是github的官方引擎，微软也用得它，技术上面没有真的难题，不过缺少参考资料。
+    Heox功能目前没看出来有弱于jekyll的，相比jekyll极度落后的中文文档，Heox是默认中文的，其文档也几乎是手把手教你用插件。
+    个人觉得两者的区别，更多是Dota和LoL的区别，这里我选择jekyll因为情怀，如果可以重来Heox更简单。
+
+## TeXt VS HardCandy
+    TeXt是我研究比较成熟的主题，适合专业内容的编写，支持数学表达式，繁体中文竖着写等多种文档编写方法。2.0版本添加了很多界面美化的功能和布局，可以说弥补了之前相比其他主题，视觉上没有优势的缺陷，是目前最流行主题。
+    HardCandy是在号称全网最美的H2o主题下改编的可爱风主题，有许多精美的细节设计，文章的瀑布流，时间线也都是当下颇为流行的设计风格，阅读体验感很好。
+    总是追求最深最细的思考，最美最简的表达，因为对美的追求，和相信整合功能的方便程度，我选择HardCandy。
+	
+	
+    
+## 技术 VS 杂谈
+    
 
 
-## 检测左右滑动事件
+## 真情 VS 假面
+    假面就是在需要沟通技巧的场景，用一些通用的句式，服务对方使其满意。如开会和领导谈项目进展，汇报工作情况，和人聊天让对方舒服。
+    真情就是我喜欢自己的工作，愿意去理解他人。
+    你对一件事物了解得越多，面对情况就越复杂。文化，三观，心境掺杂在一起，进一步把人与人分成各种小团体，增加了互相理解的难度，却才是真实有意义的话。
+    这里我更想讲一些真情，缺点是没有
 
-### js
+## 说与不说
+    说，对我这样一个有些斟酌字句的人来讲，是很耗费心力的，因为那是一个思考提升的过程，人也要对说的内容负责。
+    诗情不有真的领会和精心萃取，容易变成滥情。
+    文笔糟糕，可能无法连贯，巨大的阅读量，和思考的封闭性使得沟通时总能带出背后隐藏的大量细节，讲不清。
+    工作忙碌，已经在日记里瞎写胡说，还是多少精力胡言乱语
+    说不说自己
 
-``` js
+## 愿景
+    当你不够了解一样的东西的时候，选择是非常痛苦的，道理就是在不确定的现实面前形成自己的最优策略（时髦点的词汇，基于大数据分析的帕累托最优）。所以我还打算脚踏实地，把所有的功能一一实现，添加自己在前端当中的领悟的效果图。技术之外，尽可能得书写一些自己的看法和想法，不在乎别人的差评。
 
-// 左右滑动监测
-handletouchmove: function (event) {
-  console.log(event)
-  let currentX = event.touches[0].pageX
-  let currentY = event.touches[0].pageY
+## 功能
 
-  console.log(currentX)
-  console.log(this.data.lastX)
-  let text = ""
-  if ((currentX - this.data.lastX) < 0)
-    text = "向左滑动";
-  else if (((currentX - this.data.lastX) > 0)) 
-    text = "向右滑动";
 
-  //将当前坐标进行保存以进行下一次计算
-  this.data.lastX = currentX
-  this.data.lastY = currentY
-  this.setData({
-    text: text,
-  });
-
-},
-
-handletouchstart: function (event) {
-  console.log(event)
-  this.data.lastX = event.touches[0].pageX
-  this.data.lastY = event.touches[0].pageY
-},
-handletap: function (event) {
-  console.log(event)
-},
-
-```
-
-### wxml绑定事件
-
-``` xml
-
-<swiper-item bindtouchstart = "handletouchstart" bindtouchmove="handletouchmove" bindtap = "handletap"></swiper-item> 
-
-```
-
-<br />
-
-## swiper 滑动和点击切换页面
-
-### wxml页面布局
-``` xml
-
-<view class="askfor-body">
-  <!-- 头部导航栏开始 -->
-  <view class="topNav">
-    <view class="navArea \{\{ index == 1 ? 'active' : 'nomal' \}\}" data-current="0" bindtap="changeTab"> 这是第一页 </view>
-    <view class="navArea \{\{ index == 2 ? 'active' : 'nomal' \}\}" data-current="1" bindtap="changeTab"> 这是第二页 </view>
-  </view>
-  <!-- 头部导航栏结束 -->
-
-  <!-- swiper -->
-  <swiper current="\{\{currentTab\}\}" class="swiper-box" duration="300" bindchange='onSlideChangeEnd'>
-    <!-- 页面1 -->
-    <swiper-item class="swiper-items">
-      1
-    </swiper-item> 
-    <!-- 页面2 -->
-    <swiper-item class="swiper-items">
-      2
-    </swiper-item> 
-  </swiper>
-</view> 
-
-<!-- 将上面的花括号外的斜杠去除 -->
-
-```
-
-### js
-``` js
-
-data: {
-  index: 1,
-},
-
-// tab页面切换 //
-onSlideChangeEnd: function (e) {
-  var that = this;
-  that.setData({
-    index: e.detail.current + 1
-  })
-},
-
-changeTab: function (e) {
-  var that = this;
-  that.setData({
-    currentTab: e.target.dataset.current
-  });
-},
-
-```
-
-### wxss 样式
-``` css
-
-/* pages/test/test.wxss */
-page{
-  height: 100%;
-  width: 100%;
-}
-.askfor-body{
-  height: 100%;
-  width: 100%;
-}
-
-/* 顶部导航栏开始 */
-.topNav{
-  height: 100rpx;
-  width: 100%;
-  box-sizing: border-box;
-  border-top: 1px solid #EEEEEE;
-}
-.navArea{
-  height: 100%;
-  width: 50%;
-  font-size: 32rpx;
-  box-sizing: border-box;
-  text-align: center;
-  float: left;
-  line-height: 100rpx;
-  transition-duration: .5s;
-}
-.nomal{
-  color: #999999;
-  border-bottom: 1px solid #02bae8;
-  transition-duration: .5s;
-}
-.active{
-  color: #000000;
-  border-bottom: 3px solid #FF822A;
-  transition-duration: .5s;
-}
-/* 顶部导航栏结束 */
-
-/* 关于滑动样式开始 */
-.swiper-items{
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height:calc( 100% - 220rpx );
-}
-/* 关于滑动样式结束 */
-
-```
-<br />
-
-## button 的圆角问题
-``` css
-
-.bottom button::after{
-  border-radius: 0;  
-}
-
-```
-
+​	
   <!-- 引入share模块 -->
   
   <div class="social-share-wrapper">

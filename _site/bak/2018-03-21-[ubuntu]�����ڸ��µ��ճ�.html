@@ -26,7 +26,7 @@
 <link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
-<title>微信小程序</title>
+<title>[Ubuntu]之不一样的内网穿透</title>
 <!-- 百度统计 -->
 
 <script>
@@ -43,7 +43,7 @@ var _hmt = _hmt || [];
 
 
 <!-- Android Lolipop Theme Color -->
-<meta name="theme-color" content=" #263238 ">
+<meta name="theme-color" content=" rgb(154,133,255) ">
 </head>
 <body>
 
@@ -51,7 +51,7 @@ var _hmt = _hmt || [];
 <a id="htmlup" name="htmlup"></a>
 <!-- 引入博文顶部选项 -->
 
-<header id="post-header" style="background-color:#263238;">
+<header id="post-header" style="background-color:rgb(154,133,255);">
   <div class="top-center">
       <div class="logo">
           <a href="/" title="my awesome webtitle" style="color: white;">Arthur</a>
@@ -96,7 +96,7 @@ var _hmt = _hmt || [];
 <!-- 引入博文顶部样式 -->
 <!-- 版本一 垃圾 -->
 <!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
-    <span class="wow fadeInUp" data-wow-delay="0.2s">微信小程序</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">[Ubuntu]之不一样的内网穿透</span>
     <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
     <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
     <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
@@ -104,34 +104,34 @@ var _hmt = _hmt || [];
 
 <!-- 版本二 可切换页面 -->
 
-<div class="post-top" style="background-color:#263238;">
+<div class="post-top" style="background-color:rgb(154,133,255);">
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#263238';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
-      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#263238;"><sapn class="main">没有上一页咯</sapn></span></div>
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(154,133,255)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(154,133,255);"><sapn class="main">没有上一页咯</sapn></span></div>
     
   </div>
   <div class="post-titlearea">
-    <span class="wow fadeInUp" data-wow-delay="0.2s">微信小程序</span>
+    <span class="wow fadeInUp" data-wow-delay="0.2s">[Ubuntu]之不一样的内网穿透</span>
     <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
     <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
     <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
   </div>
   <div class="right-area">
     
-      <a href="javascript:;" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#263238';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
-      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#263238;"><sapn class="main">没有下一页咯</sapn></span></div>
+      <a href="javascript:;" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(154,133,255)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(154,133,255);"><sapn class="main">没有下一页咯</sapn></span></div>
     
   </div>
 
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="javascript:;" class="leftchange" style="border-right: 1px solid #263238;border-bottom: 2px solid #263238;"><span><br>没有上一篇咯</span></a>
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(154,133,255);border-bottom: 2px solid rgb(154,133,255);"><span><br>没有上一篇咯</span></a>
     
     
-      <a href="javascript:;" class="rightchange" style="border-left: 1px solid #263238;border-bottom: 2px solid #263238;"><span><br>没有下一篇咯</span></a>
+      <a href="javascript:;" class="rightchange" style="border-left: 1px solid rgb(154,133,255);border-bottom: 2px solid rgb(154,133,255);"><span><br>没有下一篇咯</span></a>
     
   </div>
 </div>
@@ -142,181 +142,199 @@ var _hmt = _hmt || [];
   
 
   <!-- 文章内容 -->
-  # 这是在学习小程序的过程中的日常总结(大概会常更新)
-  
-<br />
->  _导航栏_
+  ​	因为喜欢**ubuntu**，所以一直想要将它用得就像是**windows**一般丝滑。介于ubuntu装了sublime之后，我就更想让**ubuntu**变成学习主力机了。所以，今天将ubuntu也给内网穿透了。也就是说将ubuntu配合web组件，使之成为我日常学习web的调试工具。
 
-[TOC]
+​	既然讲到了 **内网穿透** 那么就要回顾过去的所学了。 [Ngrok内网穿透](http://talkcock.site/2018/01/18/Ngrok%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html)
 
-<br />
+​	在之前，我用go语言编译了windows版的ngrok客户端。所以这次，原来的配置可以不用管它，只需要编译一个linux版的客户端，在理论上讲就是可以的了。
 
+### 一、在ubuntu下远程登录centos服务器
 
-## 检测左右滑动事件
+​	在终端中输入
 
-### js
-
-``` js
-
-// 左右滑动监测
-handletouchmove: function (event) {
-  console.log(event)
-  let currentX = event.touches[0].pageX
-  let currentY = event.touches[0].pageY
-
-  console.log(currentX)
-  console.log(this.data.lastX)
-  let text = ""
-  if ((currentX - this.data.lastX) < 0)
-    text = "向左滑动";
-  else if (((currentX - this.data.lastX) > 0)) 
-    text = "向右滑动";
-
-  //将当前坐标进行保存以进行下一次计算
-  this.data.lastX = currentX
-  this.data.lastY = currentY
-  this.setData({
-    text: text,
-  });
-
-},
-
-handletouchstart: function (event) {
-  console.log(event)
-  this.data.lastX = event.touches[0].pageX
-  this.data.lastY = event.touches[0].pageY
-},
-handletap: function (event) {
-  console.log(event)
-},
-
+```shell
+ssh root@**.**.**.**   //后面的*为服务器的ip地址
 ```
 
-### wxml绑定事件
 
-``` xml
 
-<swiper-item bindtouchstart = "handletouchstart" bindtouchmove="handletouchmove" bindtap = "handletap"></swiper-item> 
+### 二、编译 **Ngrok** linux客户端
 
+​	在服务器中执行如下代码
+
+​	如果不在 /ngrok 的目录中，则 `cd ngrok` 到目录中
+
+```go
+GOOS=linux GOARCH=amd64 make release-client
 ```
 
-<br />
+​	编译生成的 **ngrok** 在 **/ngrok/bin** 目录下，其中目录下的 **ngroked** 为服务端，不要搞错了
 
-## swiper 滑动和点击切换页面
 
-### wxml页面布局
-``` xml
 
-<view class="askfor-body">
-  <!-- 头部导航栏开始 -->
-  <view class="topNav">
-    <view class="navArea \{\{ index == 1 ? 'active' : 'nomal' \}\}" data-current="0" bindtap="changeTab"> 这是第一页 </view>
-    <view class="navArea \{\{ index == 2 ? 'active' : 'nomal' \}\}" data-current="1" bindtap="changeTab"> 这是第二页 </view>
-  </view>
-  <!-- 头部导航栏结束 -->
+### 三、将客户端文件拷到本地
 
-  <!-- swiper -->
-  <swiper current="\{\{currentTab\}\}" class="swiper-box" duration="300" bindchange='onSlideChangeEnd'>
-    <!-- 页面1 -->
-    <swiper-item class="swiper-items">
-      1
-    </swiper-item> 
-    <!-- 页面2 -->
-    <swiper-item class="swiper-items">
-      2
-    </swiper-item> 
-  </swiper>
-</view> 
+​	同样，在本地的终端（不要搞错了，在本地）输入如下格式的命令
 
-<!-- 将上面的花括号外的斜杠去除 -->
-
+```shell
+scp -r root@**.**.**.**:/root/ngrok/bin/ngrok /home/***
 ```
 
-### js
-``` js
+​	其中，为远程服务器ip地址，“ : ” 之后分为两部分，前部分为 远程文件的 **绝对路径** ，后部分为 将要存放远程文件的 **本机的绝对路径**。
 
-data: {
-  index: 1,
-},
 
-// tab页面切换 //
-onSlideChangeEnd: function (e) {
-  var that = this;
-  that.setData({
-    index: e.detail.current + 1
-  })
-},
 
-changeTab: function (e) {
-  var that = this;
-  that.setData({
-    currentTab: e.target.dataset.current
-  });
-},
+### 四、编写配置文件
 
+​	在客户端文件的相同目录下创建一个文件，命名为 **ngrok.cfg** ,在文件中输入如下文字
+
+```shell
+server_addr: "abc.com:8083"
+trust_host_root_certs: false
+tunnels:
+  http:
+    subdomain: "www"
+    proto:
+      http: "80"
+
+  https:
+    subdomain: "www"
+    proto:
+      https: "443"
+
+  ssh:
+    remote_port: 2222
+    proto:
+      tcp: "22"
+
+  mstsc:
+        remote_port: 52222      
+        proto:
+         tcp: "本机ip:3389"
 ```
 
-### wxss 样式
-``` css
+​	其中，abc.com为你在远程服务器配置的域名地址。
 
-/* pages/test/test.wxss */
-page{
-  height: 100%;
-  width: 100%;
-}
-.askfor-body{
-  height: 100%;
-  width: 100%;
-}
 
-/* 顶部导航栏开始 */
-.topNav{
-  height: 100rpx;
-  width: 100%;
-  box-sizing: border-box;
-  border-top: 1px solid #EEEEEE;
-}
-.navArea{
-  height: 100%;
-  width: 50%;
-  font-size: 32rpx;
-  box-sizing: border-box;
-  text-align: center;
-  float: left;
-  line-height: 100rpx;
-  transition-duration: .5s;
-}
-.nomal{
-  color: #999999;
-  border-bottom: 1px solid #02bae8;
-  transition-duration: .5s;
-}
-.active{
-  color: #000000;
-  border-bottom: 3px solid #FF822A;
-  transition-duration: .5s;
-}
-/* 顶部导航栏结束 */
 
-/* 关于滑动样式开始 */
-.swiper-items{
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height:calc( 100% - 220rpx );
-}
-/* 关于滑动样式结束 */
+### 五、开启客户端服务
 
+​	在远程服务开启的时候，在终端输入
+
+```shell
+./ngrok -config=./ngrok.cfg start http https ssh mstsc
 ```
-<br />
 
-## button 的圆角问题
-``` css
+如果出现下图所示，即为成功
 
-.bottom button::after{
-  border-radius: 0;  
-}
+![018-03-21-](/assets/img/2018-03-21-ubuntu不定期更新的日常/2018-03-21-1.png)
 
+​	此时，你已经将 ubuntu 的内网给穿了，实际效果应该会和 windows 是一样的。
+
+---------
+
+**关于开启客户端的便捷操作：（将命令打包成可执行文件）**
+
+**格式如下**
+
+```bash
+#!/bin/bash
+××××××××××××××××××××××//命令
 ```
+
+命名随意，只要没有后缀
+
+```shell
+chmod +x ××××
+```
+
+最后终端运行
+
+```shell
+./×××
+```
+
+
+
+### 六、安装 web组件
+
+​	虽然已经将内网给穿透了，但是如果想要做网站测试，仅仅穿透了内网是显然不够的，这时候还需要一个强大 **web组件** 来配合使用。
+
+​	ubuntu环境下，web组件有各式各样的版本，在这里我还是使用 **PHPstudy** 。
+
+​	在 PHPstudy 官网明确得给了 linux 版phpstudy的安装配置方法。[LAMP](http://lamp.phpstudy.net/)
+
+​	同样，在终端逐条输入一下命令即可安装
+
+```shell
+wget -c http://lamp.phpstudy.net/phpstudy.bin
+chmod +x phpstudy.bin    #权限设置
+./phpstudy.bin 　　　　#运行安装
+```
+
+​	当然，安装编译的时间相当之长，还是要看个人电脑的配置吧。
+
+----------------
+
+**关于使用：**
+
+在终端中使用sudo 或者 使用管理员账号运行 `phpstudy start` 开启
+
+
+**命令列表：**
+
+```shell
+phpstudy start | stop | restart        开启 | 停止 | 重启
+
+phpstudy add | del | list       添加虚拟主机 | 删除虚拟主机 | 查看虚拟主机列表
+	注：添加或删除过虚拟主机域名，需要重新修改host文件配置，（sudo vim /etc/hosts）
+
+phpstudy ftp add | del | list    
+```
+
+
+**配置文件地址：**
+
+apache配置文件：`/phpstudy/server/httpd/conf/httpd.conf`
+
+PHP配置文件：`/phpstudy/server/php/etc/php.ini`
+
+
+**打开MySQL控制台：**
+
+`/phpstudy/mysql/bin/mysql -uroot -proot`
+
+**网站根目录：**  `/phpstudy/www`
+
+**外部网站代码导入根目录以及对文件的操作：**
+
+```shell
+一切操作在root 权限下执行 `sudo su`
+
+cp -r /home/xukimseven/××/×× /phpstudy/www    //复制文件至 /phpstudy/www 目录
+
+mv old new        //重命名
+```
+
+
+
+### 七、查看配置情况
+
+终端输入 `sudo phpstudy start` 之后，在浏览器中输入 `localhost` 进行查看
+
+![018-03-21-](/assets/img/2018-03-21-ubuntu不定期更新的日常/2018-03-21-2.png)
+
+如上图即为安装成功了。
+
+之后，只需要将网站放在根目录即可。 **网站根目录：**  `/phpstudy/www`
+
+------------
+
+​	关于 ubuntu 今天就先写到这里，下次将着重讲一讲 ubuntu 结合 内网穿透 实现远程连接桌面（**不是ssh**，理论上远程连接了桌面之后，就像是windows一样，所有操作都能进行，包括**ssh**）的方法。
+
+​	如果看到这篇文章还有什么疑问想要寻求帮助的，欢迎联系本人。微博、qq、微信在文章末尾处。欢迎来告诉我你的想法。
+
+​	如需转载，请注明出处，谢谢。
 
   <!-- 引入share模块 -->
   
