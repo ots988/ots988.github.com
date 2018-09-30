@@ -2,45 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af23b353-be60-4e62-9692-624f9f87bfd1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-09-30-开篇 - 副本.markdown" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_posts/2018-09-30-开篇.md" afterPath="$PROJECT_DIR$/_posts/2018-09-30-开篇.md" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/01/18/welcome.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/01/19/Ngrok内网穿透.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/01/23/SSR的搭建.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/01/26/夸夸AlphaRacks.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/02/13/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/02/14/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/02/15/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/02/15/春节快乐.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/02/18/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/05/前端自定义字体总结.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/07/AWS.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/14/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/15/关于修改主题的总结.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/18/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/19/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/03/22/ubuntu-不定期更新的日常.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/04/11/收集颜色小demo.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/05/30/HardCandy-Jekyll.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/2018/09/28/微信小程序总结.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/404.html" afterPath="$PROJECT_DIR$/_site/404.html" />
+      <change beforePath="$PROJECT_DIR$/_includes/header.html" afterPath="$PROJECT_DIR$/_includes/header.html" />
+      <change beforePath="$PROJECT_DIR$/_posts/2018-09-29-开篇.md" afterPath="$PROJECT_DIR$/_posts/2018-09-29-开篇.md" />
+      <change beforePath="$PROJECT_DIR$/_site/2018/09/29/开篇.html" afterPath="$PROJECT_DIR$/_site/2018/09/29/开篇.html" />
+      <change beforePath="$PROJECT_DIR$/_site/README.md" afterPath="" />
       <change beforePath="$PROJECT_DIR$/_site/about.html" afterPath="$PROJECT_DIR$/_site/about.html" />
-      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-10-΢��С�����ܽ�.html" afterPath="$PROJECT_DIR$/_site/bak/2018-07-10-΢��С�����ܽ�.html" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/scan/qq.JPG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/scan/wechat.JPG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-17-welcome.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-18-Ngrok������͸.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-22-SSR�Ĵ.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-01-25-���AlphaRacks.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-12-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-13-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-14-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-15-���ڿ���.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-02-18-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-05-ǰ���Զ��������ܽ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-06-AWS.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-13-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-14-�����޸�������ܽ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-17-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-18-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-03-21-[ubuntu]�����ڸ��µ��ճ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-04-11-�ռ���ɫСdemo.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-05-30-HardCandy-Jekyll.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-10-a-story.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-10-΢��С�����ܽ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-18-thinking-in-the-morning.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-07-23-LongMao.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-08-22-Wanted.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-09-27-΢��С�����ܽ�.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/_site/bak/2018-09-30-��ƪ - ����.markdowndad" afterPath="" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
       <change beforePath="$PROJECT_DIR$/_site/friendLink.html" afterPath="$PROJECT_DIR$/_site/friendLink.html" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/page2/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/page3/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/page4/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resume/index.html" afterPath="$PROJECT_DIR$/_site/resume/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/resume/resume-simple/index.html" afterPath="$PROJECT_DIR$/_site/resume/resume-simple/index.html" />
       <change beforePath="$PROJECT_DIR$/_site/tags.html" afterPath="$PROJECT_DIR$/_site/tags.html" />
       <change beforePath="$PROJECT_DIR$/_site/timeline.html" afterPath="$PROJECT_DIR$/_site/timeline.html" />
-      <change beforePath="$PROJECT_DIR$/bak/2018-09-27-微信小程序总结.md" afterPath="$PROJECT_DIR$/bak/2018-09-27-微信小程序总结.md" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/resume/index.html" afterPath="$PROJECT_DIR$/resume/index.html" />
-      <change beforePath="$PROJECT_DIR$/resume/resume-simple/index.html" afterPath="$PROJECT_DIR$/resume/resume-simple/index.html" />
+      <change beforePath="$PROJECT_DIR$/assets/profile.jpeg" afterPath="$PROJECT_DIR$/assets/profile.jpeg" />
+      <change beforePath="$PROJECT_DIR$/assets/scan/qq.JPG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/scan/wechat.JPG" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/friendLink.html" afterPath="$PROJECT_DIR$/friendLink.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,6 +52,27 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="boot.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/boot.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -69,13 +94,20 @@
       <projects_view />
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/_config.yml" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="297" />
     <option name="y" value="80" />
     <option name="width" value="816" />
@@ -98,8 +130,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,6 +141,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,41 +260,43 @@
       <option name="presentableId" value="Default" />
       <updated>1538289217956</updated>
       <workItem from="1538289237468" duration="240000" />
+      <workItem from="1538291991931" duration="1235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240000" />
+    <option name="totallyTimeSpent" value="1475000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +308,21 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/boot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

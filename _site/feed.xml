@@ -1,18 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-30T15:14:55+08:00</updated><id>http://localhost:4000/</id><title type="html">宋一峰的博客</title><subtitle>Just for fun !</subtitle><author><name>true</name></author><entry><title type="html">开篇</title><link href="http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87.html" rel="alternate" type="text/html" title="开篇" /><published>2018-09-29T17:01:13+08:00</published><updated>2018-09-29T17:01:13+08:00</updated><id>http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87</id><content type="html" xml:base="http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87.html">&lt;h1 id=&quot;2018-09-30-开篇&quot;&gt;2018-09-30 开篇&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-30T16:09:26+08:00</updated><id>http://localhost:4000/</id><title type="html">宋一峰的博客</title><subtitle>Just for fun !</subtitle><author><name>true</name></author><entry><title type="html">开篇</title><link href="http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87.html" rel="alternate" type="text/html" title="开篇" /><published>2018-09-29T17:01:13+08:00</published><updated>2018-09-29T17:01:13+08:00</updated><id>http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87</id><content type="html" xml:base="http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87.html">&lt;h1 id=&quot;2018-09-30-开篇&quot;&gt;2018-09-30 开篇&lt;/h1&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;给公司搭文档服务器，使用nginx反向代理jekyll，整合了许多功能，加之对前端的兴趣，决定开设个人博客，此篇定位要展示的内容，从选择说起。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;jekyll-vs-heox&quot;&gt;jekyll VS Heox&lt;/h2&gt;
-&lt;p&gt;在网上搜对比，基本都是说jekyll难用的，其使用的ruby使得入门难度大增，bug非常多；liquid也一样没有js好用，学习成本大。不过事实是jekyll就在近日发布了3.8.4版本，其社区活跃，是github的官方引擎，微软也用得它，技术上面没有真的难题，不过缺少参考资料。
-Heox功能目前没看出来有弱于jekyll的，相比jekyll极度落后的中文文档，Heox是默认中文的，其文档也几乎是手把手教你用插件。
-个人觉得两者的区别，更多是Dota和LoL的区别，这里我选择jekyll因为情怀，如果可以重来Heox更简单。&lt;/p&gt;
+&lt;p&gt;在网上搜对比，基本都是说jekyll难用的，其使用的ruby使得入门难度大增，bug非常多；liquid也一样没有js好用，学习成本大。不过事实是jekyll就在近日发布了3.8.4版本，其社区活跃，是github的官方引擎，微软也用得它，技术上面没有真的难题，不过缺少参考资料。&lt;/p&gt;
+
+&lt;p&gt;Heox功能目前没看出来有弱于jekyll的，相比jekyll极度落后的中文文档，Heox是默认中文的，其文档也几乎是手把手教你用插件。&lt;/p&gt;
+
+&lt;p&gt;个人觉得两者的区别，更多是Dota和LoL的区别，这里我选择jekyll因为情怀，如果可以重来Heox更简单。&lt;/p&gt;
 
 &lt;h2 id=&quot;text-vs-hardcandy&quot;&gt;TeXt VS HardCandy&lt;/h2&gt;
-&lt;p&gt;TeXt是我研究比较成熟的主题，适合专业内容的编写，支持数学表达式，繁体中文竖着写等多种文档编写方法。2.0版本添加了很多界面美化的功能和布局，可以说弥补了之前相比其他主题，视觉上没有优势的缺陷，是目前最流行主题。
-HardCandy是在号称全网最美的H2o主题下改编的可爱风主题，有许多精美的细节设计，文章的瀑布流，时间线也都是当下颇为流行的设计风格，阅读体验感很好。
-总是追求最深最细的思考，最美最简的表达，因为对美的追求，和相信整合功能的方便程度，我选择HardCandy。&lt;/p&gt;
+&lt;p&gt;TeXt是我研究比较成熟的主题，适合专业内容的编写，支持数学表达式，繁体中文竖着写等多种文档编写方法。2.0版本添加了很多界面美化的功能和布局，可以说弥补了之前相比其他主题，视觉上没有优势的缺陷，是目前最流行主题。&lt;/p&gt;
+
+&lt;p&gt;HardCandy是在号称全网最美的H2o主题下改编的可爱风主题，有许多精美的细节设计，文章的瀑布流，时间线也都是当下颇为流行的设计风格，阅读体验感很好。&lt;/p&gt;
+
+&lt;p&gt;总是追求最深最细的思考，最美最简的表达，因为对美的追求，和相信整合功能的方便程度，我选择HardCandy。&lt;/p&gt;
 
 &lt;h2 id=&quot;功能&quot;&gt;功能&lt;/h2&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;评论系统

@@ -59,6 +59,8 @@ var _hmt = _hmt || [];
               
                 <li><a href="/timeline.html">时间线</a></li>
               
+                <li><a href="/about1.html">关于博主</a></li>
+              
                 <li><a href="/friendLink.html">前端作品</a></li>
               
           </ul>
@@ -70,6 +72,22 @@ var _hmt = _hmt || [];
   </div>
 
 </header>
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 <div id="boot-area">
     <ul>
@@ -79,6 +97,8 @@ var _hmt = _hmt || [];
           <a href="/tags.html"><li>标签</li></a>
         
           <a href="/timeline.html"><li>时间线</li></a>
+        
+          <a href="/about1.html"><li>关于博主</li></a>
         
           <a href="/friendLink.html"><li>前端作品</li></a>
         
@@ -104,19 +124,19 @@ var _hmt = _hmt || [];
         
         
           
-            <a href="mailto:xujinqi7@gmail.com" title="mail"  target="_blank">
+            <a href="mailto:ots988@163.com" title="mail"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-mail"></use>
               </svg>
             </a>
           
-            <a href="https://github.com/xukimseven" title="github"  target="_blank">
+            <a href="https://github.com/ots988" title="github"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-github"></use>
               </svg>
             </a>
           
-            <a href="https://codepen.io/xukimseven/" title="Codepen"  target="_blank">
+            <a href="" title="Codepen"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-Codepen"></use>
               </svg>
@@ -128,25 +148,25 @@ var _hmt = _hmt || [];
               </svg>
             </a>
           
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=1209973867&site=qq&menu=yes" title="qq"  target="_blank">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1021510797&site=qq&menu=yes" title="qq"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-qq"></use>
               </svg>
             </a>
           
-            <a href="http://weibo.com/u/5655278647" title="weibo"  target="_blank">
+            <a href="" title="weibo"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-weibo"></use>
               </svg>
             </a>
           
-            <a href="https://www.instagram.com/xseven_0210/" title="instagram"  target="_blank">
+            <a href="" title="instagram"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-instagram"></use>
               </svg>
             </a>
           
-            <a href="http://twitter.com/xukim777" title="Twitter"  target="_blank">
+            <a href="" title="Twitter"  target="_blank">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-Twitter"></use>
               </svg>
