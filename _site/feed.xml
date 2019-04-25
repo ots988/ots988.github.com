@@ -1,4 +1,254 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-05T08:41:43+08:00</updated><id>http://localhost:4000/</id><title type="html">宋一峰的博客</title><subtitle>Just for fun !</subtitle><author><name>true</name></author><entry><title type="html">Improvement</title><link href="http://localhost:4000/2018/12/04/%E8%BF%9B%E6%AD%A5.html" rel="alternate" type="text/html" title="Improvement" /><published>2018-12-04T17:01:13+08:00</published><updated>2018-12-04T17:01:13+08:00</updated><id>http://localhost:4000/2018/12/04/%E8%BF%9B%E6%AD%A5</id><content type="html" xml:base="http://localhost:4000/2018/12/04/%E8%BF%9B%E6%AD%A5.html">&lt;h1 id=&quot;2018-12-4-improvement&quot;&gt;2018-12-4 Improvement&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-25T14:51:13+08:00</updated><id>http://localhost:4000/</id><title type="html">宋一峰的博客</title><subtitle>Just for fun !</subtitle><author><name>true</name></author><entry><title type="html">Message Queue</title><link href="http://localhost:4000/2019/04/25/MQ.html" rel="alternate" type="text/html" title="Message Queue" /><published>2019-04-25T03:01:13+08:00</published><updated>2019-04-25T03:01:13+08:00</updated><id>http://localhost:4000/2019/04/25/MQ</id><content type="html" xml:base="http://localhost:4000/2019/04/25/MQ.html">&lt;h1 id=&quot;2019-04-24-消息队列&quot;&gt;2019-04-24 消息队列&lt;/h1&gt;
+&lt;h1 id=&quot;mq知识分享&quot;&gt;MQ知识分享&lt;/h1&gt;
+
+&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;用于解决消息发送和处理相关的问题&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;为什么要使用消息队列&quot;&gt;为什么要使用消息队列&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;异步处理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;不会发生堵塞。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;系统解耦（多个系统接收一个变更信息，应对大规模系统）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;解耦是消息中间队列解决的最本质问题。所谓解耦，简单一点就是一个事务，只关心核心的流程。而需要依赖其他系统但不那么重要的事情，有通知即可，无需等待结果。换句话说，关心的是“通知，而非“处理”。
+比如下单过程中，需要发送短信积分，如果下游系统过慢（比如短信网关速度不好），主流程一直在等待。用户肯定不希望支付下单的过程中几分钟之后才得到结果。那么我们只需要通知短信系统“我们支付成功了”，不一定非要等待它处理完成。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;流量削峰（减少服务器压力）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;试想上下游对于事件的处理能力是不同的。比如，Web前端每秒承受上千万的请求，并不是什么神奇的事情，只需要加多一点机器，再搭建一些LVS负载均衡设备和Nginx等即可。但数据库的处理能力却十分有限，即使使用SSD加分库分表，单机的处理能力仍然在万级。由于成本的考虑，我们不能奢求数据库的机器数量追上前端。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这种问题同样存在于系统和系统之间，如短信系统可能由于短板效应，速度卡在网关上（每秒几百次请求），跟前端的并发量不是一个数量级。但用户晚上个半分钟左右收到短信，一般是不会有太大问题的。如果没有消息队列，两个系统之间通过协商、滑动窗口等复杂的方案也不是说不能实现。但系统复杂性指数级增长，势必在上游或者下游做存储，并且要处理定时、拥塞等一系列问题。而且每当有处理能力有差距的时候，都需要单独开发一套逻辑来维护这套逻辑。所以，利用中间系统转储两个系统的通信内容，并在下游系统有能力处理这些消息的时候，再处理这些消息，是一套相对较通用的方式。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;广播&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;消息队列的基本功能之一是进行广播。如果没有消息队列，每当一个新的业务方接入，我们都要联调一次新接口。有了消息队列，我们只需要关心消息是否送达了队列，至于谁希望订阅，是下游的事情，无疑极大地减少了开发和联调的工作量。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;最终一致性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;最终一致性指的是两个系统的状态保持一致，要么都成功，要么都失败。当然有个时间限制，理论上越快越好，但实际上在各种异常的情况下，可能会有一定延迟达到最终一致状态，但最后两个系统的状态是一样的。
+业界有一些为“最终一致性”而生的消息队列，如Notify（阿里）、QMQ（去哪儿）等，其设计初衷，就是为了交易系统中的高可靠通知。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;本地事务维护业务变化和通知消息，一起落地（失败则一起回滚），然后RPC到达broker，在broker成功落地后，RPC返回成功，本地消息可以删除。否则本地消息一直靠定时任务轮询不断重发，这样就保证了消息可靠落地broker。
+broker往consumer发送消息的过程类似，一直发送消息，直到consumer发送消费成功确认。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;持久化&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;保证数据不会丢失，在rabbitmq里可以设置消息的失效时间，也可以保存起来在空闲的时间处理。保证服务器可以暂停。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;简化开发&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;消息的生产者只需发送给服务器就行，不用考虑具体发送给谁。这样不需要专门开发给其他系统。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;缺点&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;系统可用性降低&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;系统复杂度提高&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;一致性问题&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rabbitmq&quot;&gt;RabbitMQ&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;基于AMQP协议&lt;/li&gt;
+  &lt;li&gt;高并发&lt;/li&gt;
+  &lt;li&gt;高性能&lt;/li&gt;
+  &lt;li&gt;高可用&lt;/li&gt;
+  &lt;li&gt;强大的社区支持，以及很多公司都在使用&lt;/li&gt;
+  &lt;li&gt;支持插件&lt;/li&gt;
+  &lt;li&gt;支持多语言&lt;/li&gt;
+  &lt;li&gt;集群化&lt;/li&gt;
+  &lt;li&gt;便捷的后台页面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ots988.github.io/images/mqcompare.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;各个MQ对比图&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;amqp协议介绍&quot;&gt;AMQP协议介绍&lt;/h3&gt;
+&lt;h4 id=&quot;出现背景&quot;&gt;出现背景&lt;/h4&gt;
+&lt;p&gt;越是大型的公司越是不可避免的使用来自众多供应商的MQ产品，来服务企业内部的不同应用。如果应用已经订阅了TIBCO MQ信息，若突然需要消费来自IBM MQ的消息，则实现起来会非常困难。这些产品使用不同的api，不同的协议，因而毫无疑问无法联合起来组成单一的总线。为了解决这个问题，Java Message Service(JMS)在2001年诞生了。JMS试图通过提供公共java api的方式，隐藏单独MQ产品供应商提供的实际接口，从而跨越了壁垒和解决了互通问题。从技术上讲，java应用程序只需要对JMS API编程，选择合适的MQ驱动即可。JMS会打理好其他部分的。问题是你在尝试使用单独编准化接口来整合众多不同的接口。这就像是把不同的类型的衣服粘在一起：缝合处终究会裂开。使用JMS（Java Message Service）的应用程序会变得更加脆弱。我们需要新的消息通信标准化方案。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;高级消息队列协议（AMQP）是面向消息的中间件的开放标准应用层协议。 AMQP的特征是消息导向，排队，路由（包括点对点和发布和订阅），可靠性和安全性。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AMQP要求消息传递提供商和客户端的行为在不同供应商实现可互操作的情况下，以与SMTP，HTTP，FTP等相同的方式创建了可互操作的系统。 中间件的以前标准化发生在API级别（例如JMS），并且专注于使程序员与不同中间件实现的交互标准化，而不是提供多个实现之间（AMQP的实现）的互操作性。与定义API和消息传递实现必须提供的一组行为的JMS不同，AMQP是线级协议。 线级协议是以网络流作为字节流发送的数据格式的描述。 因此，无论实现语言如何，任何可以创建和解释符合此数据格式的消息的工具都可以与任何其他兼容工具进行互操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AMQP协议是具有现代特征的二进制协议。一个提供统一消息服务的应用层标准高级消息队列协议，是应用层协议的一个开发标准，为面向消息的中间件设计。基于此协议的客户端与消息中间件可传递消息，并不受客户端/中间件不同产品，不同开发语言等条件的限制。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AMQP是一种二进制应用层协议，旨在有效地支持各种消息应用和通信模式。 它提供流控制的面向消息的通信，其中包括消息传递保证，例如最多一次（每个消息被投递一次或从不投递消息），至少一次（每个消息肯定要被传递，但可以在不同的时间）和确定一次（其中消息将始终确定到达并仅执行一次），以及基于SASL和/或TLS的身份验证和/或加密。 它假定一个基本的可靠传输层协议，如传输控制协议（TCP）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AMQP规范定义在几个层次中：（i）类型系统（传递的消息类型），（ii）用于将消息从一个进程转移到另一个进程的对称异步协议，（iii）标准的可扩展消息格式（iv）一系列的标准化但可扩展的“消息传递功能”。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;一些概念梳理&quot;&gt;一些概念梳理&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Server：又称为Broker。接收客户端连接，实现AMQP的服务器实体。&lt;/li&gt;
+  &lt;li&gt;Connection：连接，应用程序与Broker的网络连接。&lt;/li&gt;
+  &lt;li&gt;Channel：信道，几乎所有的操作都在Channel中进行，Channel是进行消息读写的通道。客户端可建立多个Channel，每个Channel代表一个会话任务。&lt;/li&gt;
+  &lt;li&gt;Message：消息。服务器和应用程序之间传递的数据，本质上就是一段数据，由Properties和Body组成。&lt;/li&gt;
+  &lt;li&gt;Exchange：交换机。接收消息，根据路由键转发消息到绑定的队列。&lt;/li&gt;
+  &lt;li&gt;Binding：Exchange和Queue之间的虚拟连接，binding中可以包含routing key。&lt;/li&gt;
+  &lt;li&gt;Routing key：一个虚拟地址，虚拟机可用它来确定如何路由一个特定消息。&lt;/li&gt;
+  &lt;li&gt;Queue：也称为Message Queue，消息队列，保存消息并将它们转发给消费者。&lt;/li&gt;
+  &lt;li&gt;Virtual Host：其实是一个虚拟概念。类似于权限控制组，一个Virtual Host里面可以有若干个Exchange和Queue，可以用来隔离Exchange和Queue。，同一个Virtual Host里面不能有相同名称的Exchange和Queue。但是权限控制的最小粒度是Virtual Host。（下面会讲到）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;保证高可用&quot;&gt;保证高可用&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;镜像集群模式，跟普通集群模式不一样的是，你创建的queue，无论元数据还是queue里的消息都会存在于多个实例上，然后每次你写消息到queue的时候，都会自动把消息到多个实例的queue里进行消息同步。&lt;/p&gt;
+
+  &lt;p&gt;这样的话，好处在于，你任何一个机器宕机了，没事儿，别的机器都可以用。坏处在于，第一，这个性能开销也太大了吧，消息同步所有机器，导致网络带宽压力和消耗很重！第二，这么玩儿，就没有扩展性可言了，如果某个queue负载很重，你加机器，新增的机器也包含了这个queue的所有数据，并没有办法线性扩展你的queue&lt;/p&gt;
+
+  &lt;p&gt;那么怎么开启这个镜像集群模式呢？我这里简单说一下，避免面试人家问你你不知道，其实很简单rabbitmq有很好的管理控制台，就是在后台新增一个策略，这个策略是镜像集群模式的策略，指定的时候可以要求数据同步到所有节点的，也可以要求就同步到指定数量的节点，然后你再次创建queue的时候，应用这个策略，就会自动将数据同步到其他的节点上去了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;比较&quot;&gt;比较&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对于需要强事务保证而且延迟敏感的，RPC是优于消息队列的。&lt;/li&gt;
+  &lt;li&gt;对于一些无关痛痒，或者对于别人非常重要但是对于自己不是那么关心的事情，可以利用消息队列去做。&lt;/li&gt;
+  &lt;li&gt;支持最终一致性的消息队列，能够用来处理延迟不那么敏感的“分布式事务”场景，而且相对于笨重的分布式事务，可能是更优的处理方式。&lt;/li&gt;
+  &lt;li&gt;当上下游系统处理能力存在差距的时候，利用消息队列做一个通用的“漏斗”。在下游有能力处理的时候，再进行分发。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;总结&quot;&gt;总结&lt;/h1&gt;
+
+&lt;p&gt;综上所述，mq是消息发送队列的综合解决方案，从安全性，可靠性，编程效率，运行性能，策略的多样性等各方面都有成熟的解决方案。&lt;/p&gt;</content><author><name>true</name></author><category term="编程" /><summary type="html">2019-04-24 消息队列 MQ知识分享</summary></entry><entry><title type="html">Random Thoughts One</title><link href="http://localhost:4000/2019/04/18/%E6%9D%82%E6%83%B31.html" rel="alternate" type="text/html" title="Random Thoughts One" /><published>2019-04-18T02:01:13+08:00</published><updated>2019-04-18T02:01:13+08:00</updated><id>http://localhost:4000/2019/04/18/%E6%9D%82%E6%83%B31</id><content type="html" xml:base="http://localhost:4000/2019/04/18/%E6%9D%82%E6%83%B31.html">&lt;h1 id=&quot;2019-04-17-杂想1&quot;&gt;2019-04-17 杂想1&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;工作压力过大，目标太过远大，看了一会抖音，睡了一觉想到的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;看到公众号里写的知识，想起大学时在朋友寝室里看到一本关于心理学的书，开篇就讲了我花很多时间悟出来的几个道理。从亲身体会到书到公众号，知识获取的代价越来越低，深度和影响也越来越浅，越来越像话家常，寓教于易，不该少了对智慧的崇敬。&lt;/p&gt;
+
+&lt;p&gt;最近看过去的历史书，看到古时的情节很有深度，虽然现在可以通过看抖音就周游世界，体会各种生活的乐趣，可越来越想绝知此事要躬行，有一段属于自己的经历和旅程。&lt;/p&gt;
+
+&lt;p&gt;做黑心生意的人，态度蛮横，强词夺理，被曝光后受到处分。人对世界的认识常常屁股决定脑袋，最终自取灭亡，要是那时站在第三者的角度看自己的作为，经常反省，怎么敢不害怕群众啊。&lt;/p&gt;
+
+&lt;p&gt;工作工资重要么，在这个资产挣钱比人快的时代，谈工资会不会显得很low，没有理想和远见。在股市里常常有人叫嚣，这么多机会为什么我错过了。我想问这么多的损失，你承担得起么？所以我想先确定我可以失去多少，提高自己用工资挽回损失的能力，再去把握机会。&lt;/p&gt;</content><author><name>true</name></author><category term="放松" /><summary type="html">2019-04-17 杂想1 工作压力过大，目标太过远大，看了一会抖音，睡了一觉想到的。</summary></entry><entry><title type="html">reduce weight</title><link href="http://localhost:4000/2019/03/05/%E7%98%A6%E8%BA%AB.html" rel="alternate" type="text/html" title="reduce weight" /><published>2019-03-05T17:01:13+08:00</published><updated>2019-03-05T17:01:13+08:00</updated><id>http://localhost:4000/2019/03/05/%E7%98%A6%E8%BA%AB</id><content type="html" xml:base="http://localhost:4000/2019/03/05/%E7%98%A6%E8%BA%AB.html">&lt;h1 id=&quot;2019-03-05-瘦身&quot;&gt;2019-03-05 瘦身&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;减肥是一个很难的过程，我的体重也是自己锐变的一部分，从大肚滚滚，跑一千米要五分钟开外，到如今修长的腿和轻松跑完半马，说说自己一点点经验。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;好朋友吃饭少我也跟着少吃饭-5斤&quot;&gt;好朋友吃饭少，我也跟着少吃饭，-5斤&lt;/h2&gt;
+&lt;p&gt;之前要吃两碗饭，米饭和面条这种淀粉含量高的食物，热量太高，容易吃胖。两类食物减肥吃很好：牛肉，猪精肉等，这些肉消化掉本身也需要很多能量，饱腹感十足；鱼肉，豆制品，芹菜等，这些吃了不胖，碳水化合物很低。&lt;/p&gt;
+
+&lt;h2 id=&quot;高考压力大跑跑步从800米到8000米-15斤&quot;&gt;高考压力大，跑跑步，从800米到8000米，-15斤&lt;/h2&gt;
+&lt;p&gt;一个肌肉发达，经常运动的人，消耗的卡路里可以是正常人的两倍，怎么可能容易胖？在健身界，比赛前减脂的神器也是穿负重衣跑步，所以有氧运动是减肥利器，不用跑得多和快，贵在坚持。还有一点很关键，作为一个经常在健身房锻炼的男青年，我想长肌肉都难上加难，所以妹子根本就不用担心练出肌肉这件事。&lt;/p&gt;
+
+&lt;h2 id=&quot;支教营养差-4斤&quot;&gt;支教营养差，-4斤&lt;/h2&gt;
+&lt;p&gt;很多人说节食减肥效果不佳，也是饮食习惯难以改变，我支教时食物多为水果和素食，没有油，而且减得很快，一周就去了4斤。平时自己烧饭时发现，油一不小心就倒多了，所以在意想不到的的地方还是摄入太多。&lt;/p&gt;
+
+&lt;h2 id=&quot;剧烈运动-2小时减2斤&quot;&gt;剧烈运动， 2小时减2斤&lt;/h2&gt;
+&lt;p&gt;我练习完深蹲，中间还喝了1000ml饮料，称体重还是会瘦2斤。剧烈运动都能提高代谢水平，促进多巴胺分泌，使得你在不运动的时候依然可以燃烧更多卡路里，还心情舒畅。入门者推荐腹肌训练和跳绳。&lt;/p&gt;</content><author><name>true</name></author><category term="习惯" /><category term="营养" /><summary type="html">2019-03-05 瘦身 减肥是一个很难的过程，我的体重也是自己锐变的一部分，从大肚滚滚，跑一千米要五分钟开外，到如今修长的腿和轻松跑完半马，说说自己一点点经验。</summary></entry><entry><title type="html">World View</title><link href="http://localhost:4000/2019/01/24/%E4%B8%89%E8%A7%82.mdwqeqw" rel="alternate" type="text/html" title="World View" /><published>2019-01-24T17:01:13+08:00</published><updated>2019-01-24T17:01:13+08:00</updated><id>http://localhost:4000/2019/01/24/%E4%B8%89%E8%A7%82</id><content type="html" xml:base="http://localhost:4000/2019/01/24/%E4%B8%89%E8%A7%82.mdwqeqw"># 2019-01-23 三观
+&gt; 前段时间读了一遍《万历十五年》，这一年是如日中天的明王朝，不敢打击外藩，君主指挥不动群僚，首辅的施政在内耗中一次次被消磨殆尽。而问题的症结，是道德代替法制，文人的舆论决定了什么该做，什么不该做，于是聪明如张居正无法丈量土地，威武如戚继光无法发展军队，手握生杀大权的万历三十年不朝躲避舆论。这里的道德就是三观。
+
+## 三观的第一个特点：没有明确的制度和目标
+管理学说一家大企业，管理者管理的是企业文化和价值观，马云会深夜打电话问支付宝首页为什么有广告；国家治理也讲学习领袖的精神和思想。当一种观念清晰的时候确实可以很好地指导和管理事务的发展，然而三观有一个特点，即使写在纸上，也一点也不清晰。一来，官员互相弹劾时无法就事论事，总是类比到道德问题，语焉含糊，难以辩论；二来，道德问题各人理解不同，不及法律清晰精准，判断事物时没有准确的依据，全凭一张嘴，例如海瑞所言，在难以判断的情况下，贫富打官司，贫者胜；三则，道德治国，难以适应日益发展的经济形势，很多促进国家发展所带来的经济问题很难得到解决，例如国家税收总是难以科学统计。
+
+## 三观的第二个特点：怡然自得可能是危险以至
+历史上的万历十五年十分平淡无奇，努尔哈赤也打不过李定国，
+中国历来的“天朝思想”和丰富的物产更加剧了中国人的自大心态，所以在世界各国已经纷纷改革，锐意进取之时，中国依然过着稳定安详不思进取的生活，直到最后被炮火惊醒。
+
+## 三观的第三个特点：影响他人的应该是法律和制度，三观更适合借鉴和交流
+人生活在被别人评价的世界里，学历，出生地，样貌</content><author><name>true</name></author><category term="价值" /><category term="欣赏" /><summary type="html"># 2019-01-23 三观 &gt; 前段时间读了一遍《万历十五年》，这一年是如日中天的明王朝，不敢打击外藩，君主指挥不动群僚，首辅的施政在内耗中一次次被消磨殆尽。而问题的症结，是道德代替法制，文人的舆论决定了什么该做，什么不该做，于是聪明如张居正无法丈量土地，威武如戚继光无法发展军队，手握生杀大权的万历三十年不朝躲避舆论。这里的道德就是三观。</summary></entry><entry><title type="html">Freedom</title><link href="http://localhost:4000/2019/01/23/%E9%82%93%E6%96%87%E8%BF%AA.html" rel="alternate" type="text/html" title="Freedom" /><published>2019-01-23T17:01:13+08:00</published><updated>2019-01-23T17:01:13+08:00</updated><id>http://localhost:4000/2019/01/23/%E9%82%93%E6%96%87%E8%BF%AA</id><content type="html" xml:base="http://localhost:4000/2019/01/23/%E9%82%93%E6%96%87%E8%BF%AA.html">&lt;h1 id=&quot;2019-01-23-邓文迪&quot;&gt;2019-01-23 邓文迪&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;看完邓文迪彪悍的经历，从第一个50多岁的男人资助她在美国上大学和获得绿卡，第二个送进耶鲁，第三个认识名流和身价过亿，到第四个小鲜肉贵族。她拆散了多对夫妻，不一定有很强的欲望，却被能力推着走向自己的自由。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;在逆境中成长实现自己的自由&quot;&gt;在逆境中成长，实现自己的自由&lt;/h2&gt;
+&lt;p&gt;在90年代末，在学校读书的邓文迪和50多岁的美国人男人谈恋爱，成为小三，然而不似其他女孩对男朋友的依赖，她要求的是去美国留学，一个自己没有经济和视野可以得到的东西，之后开启了她一步步进阶之路。这些男方都提供了经济和一些辅助，可某种程度上，她几乎是凭借自己的能力得到这一切的，耶鲁不会收一个成绩平庸的人，见多识广的默多克也不会被一个平淡的女生吸引。可以说邓文迪的成长似火箭，跟不上她步伐的人被远远摔在后面。羡慕50岁的她在海边约会小鲜肉，一定要看到她的身材没有一丝赘肉。&lt;/p&gt;
+
+&lt;h2 id=&quot;道德污点&quot;&gt;道德污点？&lt;/h2&gt;
+&lt;p&gt;看到的剧情是默多克分手时，邓文迪更换律师团队来争夺遗产，不过人家都是和平分手的，老默有时间也去她那看看孩子。可以说邓最大的污点就是在自己十分无助，缺乏某种资源的时候从男人身上得到了他们多余的资源，而代价是对婚姻和家庭的忽视。这既是邓文迪对社会传统道德规则的嘲弄，又是那时的社会资源分配不公的产物（经济对婚姻和家庭的影响）。&lt;/p&gt;
+
+&lt;h2 id=&quot;在自身没有人脉和财力的情况下该不该付出巨大的代价摆脱命运&quot;&gt;在自身没有人脉和财力的情况下，该不该付出巨大的代价摆脱命运？&lt;/h2&gt;
+&lt;p&gt;才华而被埋没是一件很正常的事情，只有能力的完备结合，又适应某种需求，才能转化为价值。一个创业者为了成功，会尝试几百种方法到达自己的目的地，马丁路德在宣传文字中夸张白人的反对行为，俞洪敏喝酒喝到送急救室，川普的老婆梅拉尼娅朝夕几十年却不曾让川普发现自己排矢气(放屁)，精心维护自己的形象。成功很不易，所以要衡量为之付出的代价，默多克说认识邓让他至少年轻三十岁，邓也让他很紧张，努力做得更好。我们其实应该努力做好一个伴侣，不因传统价值而懈怠，家庭也是让每个人都过得更好。&lt;/p&gt;
+
+&lt;h2 id=&quot;我的看法&quot;&gt;我的看法&lt;/h2&gt;
+&lt;p&gt;从邓的个人来讲，这只是她人生的奇妙经历，或许早年认识一个优秀的中国男人也会相夫教子就此一生，只是看客们屁股决定脑子，而在我们的文化里，又有太多“异类”死于人们的口舌和道德规则之中。&lt;/p&gt;</content><author><name>true</name></author><category term="自由" /><category term="能力" /><summary type="html">2019-01-23 邓文迪 看完邓文迪彪悍的经历，从第一个50多岁的男人资助她在美国上大学和获得绿卡，第二个送进耶鲁，第三个认识名流和身价过亿，到第四个小鲜肉贵族。她拆散了多对夫妻，不一定有很强的欲望，却被能力推着走向自己的自由。</summary></entry><entry><title type="html">Fit Summary</title><link href="http://localhost:4000/2018/12/11/%E5%81%A5%E8%BA%AB%E5%B0%8F%E7%BB%93.html" rel="alternate" type="text/html" title="Fit Summary" /><published>2018-12-11T17:01:13+08:00</published><updated>2018-12-11T17:01:13+08:00</updated><id>http://localhost:4000/2018/12/11/%E5%81%A5%E8%BA%AB%E5%B0%8F%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2018/12/11/%E5%81%A5%E8%BA%AB%E5%B0%8F%E7%BB%93.html">&lt;h1 id=&quot;2018-12-11-fit-summary&quot;&gt;2018-12-11 Fit Summary&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;人的身体有无限的可能，最近健身的水平经历了一次极速的提升，眼光也从一个爱好者转向专业，体验更多的奇妙和意外。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;定一个长远的目标用美的标准&quot;&gt;定一个长远的目标，用美的标准&lt;/h2&gt;
+&lt;p&gt;一开始健身可以带给我，健康，好身材和社交。对于封面图这种水平，成本很高，提高了之后对我的初始目标也没什么用。正式怀着这样的心里，以及之前多次尝试的失败（如难以控制自己的饮食）封面图的水平可以说是我不敢想象的目标。可是有一天别人跟我讲你这么年轻，一年后就可以达到一定的水平，两年之内达到市级的水平很容易啊。这提醒了我，其实看似不可想象的水平也在我心里有明确路线，细致得了解细胞在健身过程的生长原理，动作的进一步调优，如果有了，就会实现。&lt;/p&gt;
+
+&lt;h2 id=&quot;打实基础才会有真的提高&quot;&gt;打实基础，才会有真的提高&lt;/h2&gt;
+&lt;p&gt;你做很重的重量，可能是因为动作不标准和数量很少，尽管他是实力在外在的表现形式，打实基础才能有实力提升自己做更重的重量。&lt;/p&gt;
+
+&lt;h2 id=&quot;尊重现实生活的捷径&quot;&gt;尊重现实，生活的捷径&lt;/h2&gt;
+&lt;p&gt;不顾自己的薄弱项，使得遭遇瓶颈&lt;/p&gt;</content><author><name>true</name></author><category term="成败" /><category term="守拙" /><category term="自我" /><summary type="html">2018-12-11 Fit Summary</summary></entry><entry><title type="html">Life</title><link href="http://localhost:4000/2018/12/07/%E7%94%9F%E6%B4%BB.html" rel="alternate" type="text/html" title="Life" /><published>2018-12-07T17:01:13+08:00</published><updated>2018-12-07T17:01:13+08:00</updated><id>http://localhost:4000/2018/12/07/%E7%94%9F%E6%B4%BB</id><content type="html" xml:base="http://localhost:4000/2018/12/07/%E7%94%9F%E6%B4%BB.html">&lt;h1 id=&quot;2018-12-7-life&quot;&gt;2018-12-7 Life&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;戏剧总在重复人生被命运捉弄的主题，而我们能在这不确定环境下做的就是选择。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;成败导致生活的进退&quot;&gt;成败导致生活的进退&lt;/h2&gt;
+&lt;p&gt;回顾一年的得失，自己并不处于一个危险的境地，然而也有很多没有做好，想做却难以实现的事，忧上心头，就像彼得定律所说：在各种组织中，雇员总是趋向于晋升到其能力所不及的地位。所以每一次成功都是在逼近一个人能力的极限。从心所欲不逾矩，说的仅仅是自己能力圈内的事，然而人很不愿意接受止步于已有的成绩，中年的停滞感也万分痛苦。新的权利，资产的目标（变美丽，工作好）总是让人以物喜，以己悲。&lt;/p&gt;
+
+&lt;h2 id=&quot;守拙是守住天真烂漫&quot;&gt;守拙是守住天真烂漫&lt;/h2&gt;
+&lt;p&gt;电影和游戏多是在讲能力圈迅速扩大的美妙故事，面对必然有的停滞和倒退（你越优秀越早遇到），必须要让自己的欲望成长慢于能力的成长（欲望成长，是会加重短期利益的需求，刺激能力成长可能性很低。）。幸运的是，正如心理学一贯所言，快乐，幸福的生活源于自己的内心。每天精力旺盛得醒来，对世界充满好奇和激情，不被外人外事打扰得看一本书，全心全意得去了解一个人。信任他人，守住天真烂漫，都不需要成功，却能过得开心，然而怎么去守护天真呢？&lt;/p&gt;
+
+&lt;h2 id=&quot;成功的收益和代价&quot;&gt;成功的收益和代价&lt;/h2&gt;
+&lt;p&gt;成功正真给我们的是安全感和选择的权利，让我们有机会得了解自己，寻求自己喜欢的东西，和自己喜欢的人在一起，过得快乐。有时候看领导威风凛凛，
+其实他们只是拿了他们同实力同年龄的人应有的薪资，大部分行业的起薪或千差万别，过了三十岁以后又会归于平均，同等实力的人在成就上不会有太大的差别。&lt;/p&gt;
+
+&lt;p&gt;如果目标并没有涉及到安全感和自由成功，不要急于实现，追求自己实力的成长，多保留一点失去了就没有的纯真美好，守住清静，发挥热血，更能证明自己。&lt;/p&gt;</content><author><name>true</name></author><category term="成败" /><category term="守拙" /><category term="自我" /><summary type="html">2018-12-7 Life</summary></entry><entry><title type="html">Improvement</title><link href="http://localhost:4000/2018/12/04/%E8%BF%9B%E6%AD%A5.html" rel="alternate" type="text/html" title="Improvement" /><published>2018-12-04T17:01:13+08:00</published><updated>2018-12-04T17:01:13+08:00</updated><id>http://localhost:4000/2018/12/04/%E8%BF%9B%E6%AD%A5</id><content type="html" xml:base="http://localhost:4000/2018/12/04/%E8%BF%9B%E6%AD%A5.html">&lt;h1 id=&quot;2018-12-4-improvement&quot;&gt;2018-12-4 Improvement&lt;/h1&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;进步是一个没有那么想谈的话题，尽管问我这个的反而人比较多，因为进步和一个人内在真实水平关系很大，很多时候进步就是内在实力表现出来而已。&lt;/p&gt;
@@ -43,91 +293,4 @@
 &lt;p&gt;都是需要花很多心思研究原理和细节，事业很强的人不会错过机会，运动很强的人也拒绝不用心，每一次都要有提高。在《爱上跑步的13周》里作者也建议写运动日记。总之，当你想要成为健身房的王者，或者拥有傲人的跑步成绩，就会有许多事情去做，要付出巨大的努力，还会学会许多事物发展的哲学，因为人的身体本身也会教会我们很多道理。&lt;/p&gt;
 
 &lt;h2 id=&quot;运动作为兴趣爱好的诸多优势&quot;&gt;运动作为兴趣爱好的诸多优势&lt;/h2&gt;
-&lt;p&gt;兴趣爱好一般都具有社交属性，而关于运动的交流可以认识很多志同道合的好朋友。兴趣爱好是生命的滋养剂，给人信念和自信。运动培养一个人的毅力，马拉松运动员在生活中也更多的表现出不愿放弃，挑战自我的行为。&lt;/p&gt;</content><author><name>true</name></author><category term="运动" /><category term="独立思考" /><category term="与众不同" /><summary type="html">2018-11-20 Sport</summary></entry><entry><title type="html">Creativity</title><link href="http://localhost:4000/2018/11/19/%E5%88%9B%E9%80%A0%E5%8A%9B.html" rel="alternate" type="text/html" title="Creativity" /><published>2018-11-19T17:01:13+08:00</published><updated>2018-11-19T17:01:13+08:00</updated><id>http://localhost:4000/2018/11/19/%E5%88%9B%E9%80%A0%E5%8A%9B</id><content type="html" xml:base="http://localhost:4000/2018/11/19/%E5%88%9B%E9%80%A0%E5%8A%9B.html">&lt;h1 id=&quot;2018-11-19-创造力&quot;&gt;2018-11-19 创造力&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;昨天和朋友一起看综艺《故事王》随机给5幅简单的图片，现编现讲一个故事，用讲故事来吸引眼球，征服观众。这也是我对创造力的理解，将人人都会的文字进行组合，配上语态音调，就能影响现实，创造经济收益，看似简单，其实创造力的施展是需要苛刻的条件的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;独立思考的能力&quot;&gt;独立思考的能力&lt;/h2&gt;
-&lt;p&gt;凡事自己先思考一遍，形成自己的看法和思路并实践一下，可以比较好的体验问题解决的整个思路，再比对已有的解决方法，可以轻松得看到自己思维的不足，完善解决问题的思维是有靠谱创造力的第一步。&lt;/p&gt;
-
-&lt;h2 id=&quot;厚实的摄入&quot;&gt;厚实的摄入&lt;/h2&gt;
-&lt;p&gt;培根说读史使人明智，牛顿那么聪明都会被庞氏骗局骗光家产，学习别人的经验不但可以师法前人，还能在不确定的情况下做出最大胜率的决策。很多时候革新就是已经存在的东西小小的改变。&lt;/p&gt;
-
-&lt;h2 id=&quot;有能力与众不同&quot;&gt;有能力与众不同&lt;/h2&gt;
-&lt;p&gt;这是最难的一点，因为与众相同可以节约大量的成本，而且有很多同路人。当一个人一定程度上完成了自己的原始积累(比方学生成绩好社交广且有立足之地，社会人有事业家庭和空余的时间）,他要将自己置于失败率很大的事情之中，习惯失败而且自信自己的信念和运气，那么一件很美的事情可能会诞生在这个世界上。&lt;/p&gt;</content><author><name>true</name></author><category term="创新" /><category term="独立思考" /><category term="与众不同" /><summary type="html">2018-11-19 创造力</summary></entry><entry><title type="html">Physical Exercise</title><link href="http://localhost:4000/2018/09/29/%E5%81%A5%E8%BA%AB.html" rel="alternate" type="text/html" title="Physical Exercise" /><published>2018-09-29T18:01:13+08:00</published><updated>2018-09-29T18:01:13+08:00</updated><id>http://localhost:4000/2018/09/29/%E5%81%A5%E8%BA%AB</id><content type="html" xml:base="http://localhost:4000/2018/09/29/%E5%81%A5%E8%BA%AB.html">&lt;h1 id=&quot;2018-09-30-健身心得&quot;&gt;2018-09-30 健身心得&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;水平越高对自己身体的了解越透彻。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;薄弱的部位练起来很痛苦，却能让自己均衡发展，避免受伤。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;受伤很多时候来源于水平的突飞猛进，自己极限的变更。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;灵活，耐力，爆发，每种能力都是要大量时间去练的，普通人要学会取舍，天才可以都很厉害。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;蛋白粉，红牛，教练，当你达到一定水平，内在因素开始越来越比外在因素重要。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;动脑其实是关键，心理学实验证明仅想象锻炼就能提升力量，锻炼不思考，水平一定止步不前。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;边际效用递减，水平越高，提升的代价越大。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有拼一把的疯狂，就不能刷新自己的记录，进入新的世界。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;准备很重要，你准备跑5公里，就不能坚持跑10公里，即使你的水平能跑20公里。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;练过一个动作可以比没练过可以强2-5倍，而实力是体现在都没练过的动作上比别人的强大。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;只要用心去做，极差的水平也能练到极好。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;毅力不是坚持的动力，兴趣才是。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>true</name></author><category term="健身" /><category term="坚毅" /><category term="感想" /><summary type="html">2018-09-30 健身心得</summary></entry><entry><title type="html">开篇</title><link href="http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87.html" rel="alternate" type="text/html" title="开篇" /><published>2018-09-29T17:01:13+08:00</published><updated>2018-09-29T17:01:13+08:00</updated><id>http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87</id><content type="html" xml:base="http://localhost:4000/2018/09/29/%E5%BC%80%E7%AF%87.html">&lt;h1 id=&quot;2018-09-30-开篇&quot;&gt;2018-09-30 开篇&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;给公司搭文档服务器，使用nginx反向代理jekyll，整合了许多功能，加之对前端的兴趣，决定开设个人博客，此篇定位要展示的内容，从选择说起。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;jekyll-vs-heox&quot;&gt;jekyll VS Heox&lt;/h2&gt;
-&lt;p&gt;在网上搜对比，基本都是说jekyll难用的，其使用的ruby使得入门难度大增，bug非常多；liquid也一样没有js好用，学习成本大。不过事实是jekyll就在近日发布了3.8.4版本，其社区活跃，是github的官方引擎，微软也用得它，技术上面没有真的难题，不过缺少参考资料。&lt;/p&gt;
-
-&lt;p&gt;Heox功能目前没看出来有弱于jekyll的，相比jekyll极度落后的中文文档，Heox是默认中文的，其文档也几乎是手把手教你用插件。&lt;/p&gt;
-
-&lt;p&gt;个人觉得两者的区别，更多是Dota和LoL的区别，这里我选择jekyll因为情怀，如果可以重来Heox更简单。&lt;/p&gt;
-
-&lt;h2 id=&quot;text-vs-hardcandy&quot;&gt;TeXt VS HardCandy&lt;/h2&gt;
-&lt;p&gt;TeXt是我研究比较成熟的主题，适合专业内容的编写，支持数学表达式，繁体中文竖着写等多种文档编写方法。2.0版本添加了很多界面美化的功能和布局，可以说弥补了之前相比其他主题，视觉上没有优势的缺陷，是目前最流行主题。&lt;/p&gt;
-
-&lt;p&gt;HardCandy是在号称全网最美的H2o主题下改编的可爱风主题，有许多精美的细节设计，文章的瀑布流，时间线也都是当下颇为流行的设计风格，阅读体验感很好。&lt;/p&gt;
-
-&lt;p&gt;总是追求最深最细的思考，最美最简的表达，因为对美的追求，和相信整合功能的方便程度，我选择HardCandy。&lt;/p&gt;
-
-&lt;h2 id=&quot;功能&quot;&gt;功能&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;评论系统
-数据统计与分析
-阅读量统计
-内容分享服务
-搜索服务
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>true</name></author><category term="比对" /><category term="jekyll" /><category term="TeXt" /><summary type="html">2018-09-30 开篇</summary></entry></feed>
+&lt;p&gt;兴趣爱好一般都具有社交属性，而关于运动的交流可以认识很多志同道合的好朋友。兴趣爱好是生命的滋养剂，给人信念和自信。运动培养一个人的毅力，马拉松运动员在生活中也更多的表现出不愿放弃，挑战自我的行为。&lt;/p&gt;</content><author><name>true</name></author><category term="运动" /><category term="独立思考" /><category term="与众不同" /><summary type="html">2018-11-20 Sport</summary></entry></feed>
